@@ -11,7 +11,7 @@ public class Animation implements SimulationObject {
 	//make all the objects here
 	Bomb norm,atom;
 	BufferedImage [] slides;
-	int state = -1;
+	int state = 0;
 	public Animation(BufferedImage [] slides) {
 		
 		//initialize all the objects here
