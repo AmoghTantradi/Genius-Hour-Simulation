@@ -38,7 +38,7 @@ public class Bomb extends Rectangle2D.Double implements SimulationObject {
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub
-		System.out.println("updating");
+
 		this.setRect(this.x,this.y+this.dy, Constants.Bomb_width, Constants.Bomb_height);//falls/translates
 		
 		if(this.y+this.height >=height_of_explosion) {
@@ -59,6 +59,12 @@ public class Bomb extends Rectangle2D.Double implements SimulationObject {
 		// TODO Auto-generated method stub
 		win.setColor(col);
 		win.fill(this);
+		if(this instanceof ConventionalExplosive) {
+			win.drawString("Conventional explosive", (int)this.x,(int)(1.1*( this.y+this.height)));
+		}
+		else {
+			win.drawString("The Atom Bomb", (int)this.x,(int)(1.1*( this.y+this.height)));
+		}
 		e.draw(win);
 	}
 

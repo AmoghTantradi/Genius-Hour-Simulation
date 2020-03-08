@@ -19,6 +19,7 @@ public class ConventionalExplosive extends Bomb  {
 	
 	public void draw(Graphics2D win) {
 		super.draw(win);
+		
 	}
 
 
