@@ -12,7 +12,8 @@ public class Simulation extends GDV5{
 	public Simulation() {
 		super();//constructs the object 
 		super.setSize(Constants.width, Constants.height);//let's make 1000*1000
-		super.setBackground(Color.black);
+		super.setBackground(Constants.background_color);
+		super.setTitle("The Atom Bomb");
 		a = new Animation();
 	}
 	

@@ -9,7 +9,7 @@ public class Particle extends Rectangle2D.Double implements SimulationObject {
 	double dx, dy;
 
 	public Particle(double x, double y, double dx, double dy) {
-		super(x, y, Constants.size, Constants.size);
+		super(x, y, Constants.size_of_particle, Constants.size_of_particle);
 		this.dx = dx;
 		this.dy = dy;
 	}
@@ -17,7 +17,7 @@ public class Particle extends Rectangle2D.Double implements SimulationObject {
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub
-		super.setRect(this.x + this.dx, this.y + this.dy, Constants.size, Constants.size);
+		super.setRect(this.x + this.dx, this.y + this.dy, Constants.size_of_particle, Constants.size_of_particle);
 	}
 
 	public boolean outBounds() {

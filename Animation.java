@@ -5,13 +5,14 @@ import java.awt.Graphics2D;
 public class Animation implements SimulationObject {
 	
 	//make all the objects here
-	Bomb norm;
+	Bomb norm,atom;
 	
 	public Animation() {
 		
 		//initialize all the objects here
 		
 		norm = new ConventionalExplosive();
+		//atom = new AtomicExplosive();
 		//atom = new 
 		
 		
@@ -31,13 +32,27 @@ public class Animation implements SimulationObject {
 			if(!norm.isFalling) {
 				if(norm.isFinished()) {
 					norm = null;
-					restart();//drops another bomb
+					//restart();//drops another bomb
+					dropAtom();
+				}
+			}
+		}
+		else if(atom!=null) {
+			atom.update();
+			if(!atom.isFalling) {
+				if(atom.isFinished()) {
+					atom = null;
+					dropConventional();
 				}
 			}
 		}
 	}
 	
-	public void restart() {
+	public void dropAtom() {
+		atom = new AtomicExplosive();
+	}
+	
+	public void dropConventional() {
 		norm = new ConventionalExplosive();
 	}
 	@Override
@@ -45,6 +60,7 @@ public class Animation implements SimulationObject {
 		// TODO Auto-generated method stub
 		//draw everything here 
 		if(norm!=null) norm.draw(win);
+		if(atom!=null) atom.draw(win);
 	}
 	
 	
